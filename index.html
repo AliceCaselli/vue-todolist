@@ -25,13 +25,19 @@
             
             <ul id = "list-items">
                 
-                <li v-for="item in list" :class="item.done == true ? 'check' : '' "> 
+                <li v-for="(item, index) in items"> 
 
-                    {{item.text}}
+                    <span @click="toggleItem(item)" :class="item.done == true ? 'check' : ''"> {{item.text}}</span> 
+                    <span class="cross" @click="deleteItem(index)"> &cross; </span>
                     
                 </li>
                 
             </ul>
+
+            <input id="input" @keyup.enter="addItem()" v-model="newItem.text" type="text" placeholder="Write text">
+
+            <button @click="addItem()">Enter</button>
+
             
         </div>
 

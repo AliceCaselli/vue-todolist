@@ -24,10 +24,10 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        list:[
+        items:[
             {
                 text: 'comprare quaderni',
-                done: true
+                done: false
             },
 
             {
@@ -37,7 +37,7 @@ const { createApp } = Vue
 
             {
                 text: 'consegnare esercizi',
-                done: true
+                done: false
             },
 
             {
@@ -46,18 +46,45 @@ const { createApp } = Vue
             },
         ],
 
-         newItem: {
+        newItem:{
             text: '',
             done: false
         },
-
       }
     },
 
 
     methods: {
 
+        toggleItem(item) {
+            
+            if(item.done == true) {
+              item.done = false;
+            } else {
+              item.done = true;
+            }
       
+          },
+
+      deleteItem(itemIndex){
+
+        this.items.splice(itemIndex, 1);
+
+      },
+
+      addItem(){
+        const newItem = {
+              text: this.newItemText,
+              done: false,
+            };
+            this.items.push(this.newItem);
+
+
+            this.newItem = {
+              text: '',
+              done: false
+            };
+        },
     }
 
   }).mount('#app')

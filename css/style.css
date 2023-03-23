@@ -26,3 +26,17 @@ h1{
     text-decoration: line-through;
 }
 
+#list-items li {
+    cursor: pointer;
+}
+
+#list-items li .cross{
+    padding-left: 5px;
+    color: red;
+}
+
+
+#input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
