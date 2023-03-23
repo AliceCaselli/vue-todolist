@@ -16,7 +16,26 @@
     <!-- link vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <div id="app">{{ message }}</div>
+    <div id="app">
+
+        
+        <div class="container">
+            
+            <h1>To do list</h1>
+            
+            <ul id = "list-items">
+                
+                <li v-for="item in list" :class="item.done == true ? 'check' : '' "> 
+
+                    {{item.text}}
+                    
+                </li>
+                
+            </ul>
+            
+        </div>
+
+    </div>
 
 
     <!-- link myjs -->

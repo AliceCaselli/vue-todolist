@@ -24,7 +24,40 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        message: 'Hello Vue!'
+        list:[
+            {
+                text: 'comprare quaderni',
+                done: true
+            },
+
+            {
+                text: 'fare la spesa',
+                done: false
+            },
+
+            {
+                text: 'consegnare esercizi',
+                done: true
+            },
+
+            {
+                text: 'andare al cinema',
+                done: false
+            },
+        ],
+
+         newItem: {
+            text: '',
+            done: false
+        },
+
       }
+    },
+
+
+    methods: {
+
+      
     }
+
   }).mount('#app')
